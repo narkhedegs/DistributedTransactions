@@ -2,10 +2,7 @@
 **Distributed Transactions in .NET**
 =============================
 
-[TOC]
-
 ----------
-
 
 What is a Transaction (a.k.a local transaction)?
 ---------------------------
