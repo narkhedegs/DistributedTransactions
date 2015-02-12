@@ -1,8 +1,8 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
-using DistributedTransactions.Console.Models;
+using DistributedTransactions.Models;
 
-namespace DistributedTransactions.Console.DataAccess
+namespace DistributedTransactions.DataAccess
 {
     public interface IConditionRepository
     {

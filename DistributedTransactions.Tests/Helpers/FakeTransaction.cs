@@ -1,4 +1,4 @@
-﻿using DistributedTransactions.Console.Common;
+﻿using DistributedTransactions.Common;
 
 namespace DistributedTransactions.Tests.Helpers
 {

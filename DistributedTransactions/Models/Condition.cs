@@ -1,4 +1,4 @@
-﻿namespace DistributedTransactions.Console.Models
+﻿namespace DistributedTransactions.Models
 {
     public class Condition
     {

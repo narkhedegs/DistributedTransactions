@@ -53,9 +53,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DistributedTransactions.Console\DistributedTransactions.Console.csproj">
+    <ProjectReference Include="..\DistributedTransactions\DistributedTransactions.csproj">
       <Project>{6c07f61c-a1c0-4a2f-8488-38bf8d56d93f}</Project>
-      <Name>DistributedTransactions.Console</Name>
+      <Name>DistributedTransactions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

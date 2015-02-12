@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace DistributedTransactions.Console.Models
+namespace DistributedTransactions.Models
 {
     public class Patient
     {

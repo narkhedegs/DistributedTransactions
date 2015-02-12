@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DistributedTransactions.Console")]
+[assembly: AssemblyTitle("DistributedTransactions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("narkhedegs@gmail.com")]
-[assembly: AssemblyProduct("DistributedTransactions.Console")]
+[assembly: AssemblyProduct("DistributedTransactions")]
 [assembly: AssemblyCopyright("Copyright © narkhedegs@gmail.com 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

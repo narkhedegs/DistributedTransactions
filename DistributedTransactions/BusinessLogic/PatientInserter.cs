@@ -1,8 +1,8 @@
-﻿using DistributedTransactions.Console.Common;
-using DistributedTransactions.Console.DataAccess;
-using DistributedTransactions.Console.Models;
+﻿using DistributedTransactions.Common;
+using DistributedTransactions.DataAccess;
+using DistributedTransactions.Models;
 
-namespace DistributedTransactions.Console.BusinessLogic
+namespace DistributedTransactions.BusinessLogic
 {
     public interface IPatientInserter
     {

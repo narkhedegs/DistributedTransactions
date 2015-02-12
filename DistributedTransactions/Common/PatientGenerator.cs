@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using DistributedTransactions.Console.Models;
+using DistributedTransactions.Models;
 
-namespace DistributedTransactions.Console.Common
+namespace DistributedTransactions.Common
 {
     public static class PatientGenerator
     {

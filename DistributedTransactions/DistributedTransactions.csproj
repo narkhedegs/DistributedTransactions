@@ -7,8 +7,8 @@
     <ProjectGuid>{6C07F61C-A1C0-4A2F-8488-38BF8D56D93F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DistributedTransactions.Console</RootNamespace>
-    <AssemblyName>DistributedTransactions.Console</AssemblyName>
+    <RootNamespace>DistributedTransactions</RootNamespace>
+    <AssemblyName>DistributedTransactions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

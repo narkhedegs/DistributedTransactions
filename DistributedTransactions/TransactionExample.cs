@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Transactions;
-using DistributedTransactions.Console.BusinessLogic;
-using DistributedTransactions.Console.Common;
-using DistributedTransactions.Console.DataAccess;
-using TransactionManager = DistributedTransactions.Console.Common.TransactionManager;
+using DistributedTransactions.BusinessLogic;
+using DistributedTransactions.Common;
+using DistributedTransactions.DataAccess;
+using TransactionManager = DistributedTransactions.Common.TransactionManager;
 
-namespace DistributedTransactions.Console
+namespace DistributedTransactions
 {
     /// <summary>
     /// This class contains methods to execute transactions.
@@ -32,7 +32,7 @@ namespace DistributedTransactions.Console
                         new TransactionManager());
 
                     var patientId = patientInserter.Insert(patient);
-                    System.Console.WriteLine("Inserted a patient with PatientId: {0}", patientId);
+                    Console.WriteLine("Inserted a patient with PatientId: {0}", patientId);
 
                     if (failTransaction) throw new Exception("Transaction Failed.");
 
@@ -41,7 +41,7 @@ namespace DistributedTransactions.Console
             }
             catch (Exception exception)
             {
-                System.Console.WriteLine("Exception: {0}", exception.Message);
+                Console.WriteLine("Exception: {0}", exception.Message);
             }
         }
 
@@ -65,7 +65,7 @@ namespace DistributedTransactions.Console
                         new TransactionManager());
 
                     var twinbrookPatientId = twinbrookPatientInserter.Insert(patient);
-                    System.Console.WriteLine("Inserted a patient with PatientId: {0} into Twinbrook Medical Center", twinbrookPatientId);
+                    Console.WriteLine("Inserted a patient with PatientId: {0} into Twinbrook Medical Center", twinbrookPatientId);
 
                     var northwestPatientInserter = new PatientInserter(
                         new PatientRepository("northwest-medical-center"),
@@ -74,7 +74,7 @@ namespace DistributedTransactions.Console
                         new TransactionManager());
 
                     var northwestPatientId = northwestPatientInserter.Insert(patient);
-                    System.Console.WriteLine("Inserted a patient with PatientId: {0} into Northwest Medical Center", northwestPatientId);
+                    Console.WriteLine("Inserted a patient with PatientId: {0} into Northwest Medical Center", northwestPatientId);
 
                     if (failTransaction) throw new Exception("Transaction Failed.");
 
@@ -83,7 +83,7 @@ namespace DistributedTransactions.Console
             }
             catch (Exception exception)
             {
-                System.Console.WriteLine("Exception: {0}", exception.Message);
+                Console.WriteLine("Exception: {0}", exception.Message);
             }
         }
 
@@ -107,7 +107,7 @@ namespace DistributedTransactions.Console
                         new TransactionManager());
 
                     var twinbrookPatientId = twinbrookPatientInserter.Insert(patient);
-                    System.Console.WriteLine("Inserted a patient with PatientId: {0} into Twinbrook Medical Center", twinbrookPatientId);
+                    Console.WriteLine("Inserted a patient with PatientId: {0} into Twinbrook Medical Center", twinbrookPatientId);
 
                     var remoteTwinbrookPatientInserter = new PatientInserter(
                         new PatientRepository("remote-twinbrook-medical-center"),
@@ -116,7 +116,7 @@ namespace DistributedTransactions.Console
                         new TransactionManager());
 
                     var remoteTwinbrookPatientId = remoteTwinbrookPatientInserter.Insert(patient);
-                    System.Console.WriteLine("Inserted a patient with PatientId: {0} into Remote Twinbrook Medical Center", remoteTwinbrookPatientId);
+                    Console.WriteLine("Inserted a patient with PatientId: {0} into Remote Twinbrook Medical Center", remoteTwinbrookPatientId);
 
                     if (failTransaction) throw new Exception("Transaction Failed.");
 
@@ -125,7 +125,7 @@ namespace DistributedTransactions.Console
             }
             catch (Exception exception)
             {
-                System.Console.WriteLine("Exception: {0}", exception.Message);
+                Console.WriteLine("Exception: {0}", exception.Message);
             }
         }
     }

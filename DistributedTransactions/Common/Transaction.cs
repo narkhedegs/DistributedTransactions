@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Transactions;
 
-namespace DistributedTransactions.Console.Common
+namespace DistributedTransactions.Common
 {
     public interface ITransaction : IDisposable
     {

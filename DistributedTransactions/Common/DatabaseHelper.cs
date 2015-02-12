@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace DistributedTransactions.Console.Common
+namespace DistributedTransactions.Common
 {
     public static class DatabaseHelper
     {
@@ -46,7 +46,7 @@ namespace DistributedTransactions.Console.Common
             }
             catch (Exception exception)
             {
-                System.Console.WriteLine("Exception: {0}", exception.Message);
+                Console.WriteLine("Exception: {0}", exception.Message);
             }
         }
     }

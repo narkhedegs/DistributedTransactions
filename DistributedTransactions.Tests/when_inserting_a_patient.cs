@@ -1,8 +1,8 @@
 ﻿using System;
-using DistributedTransactions.Console.BusinessLogic;
-using DistributedTransactions.Console.Common;
-using DistributedTransactions.Console.DataAccess;
-using DistributedTransactions.Console.Models;
+using DistributedTransactions.BusinessLogic;
+using DistributedTransactions.Common;
+using DistributedTransactions.DataAccess;
+using DistributedTransactions.Models;
 using DistributedTransactions.Tests.Helpers;
 using Moq;
 using NUnit.Framework;
