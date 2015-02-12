@@ -2,11 +2,6 @@
 **Distributed Transactions in .NET**
 =============================
 
-[TOC]
-
-----------
-
-
 What is a Transaction (a.k.a local transaction)?
 ---------------------------
 Transactions bind multiple tasks together. For example, imagine that an application performs two tasks. First, it creates a new table in a database. Next, it calls a specialized object to collect, format, and insert data into the new table. These two tasks are related and even interdependent, such that you want to avoid creating a new table unless you can fill it with data. Executing both tasks within the scope of a single transaction enforces the connection between them. If the second task fails, the first task is rolled back to a point before the new table was created. To ensure predictable behavior, all transactions must possess the basic ACID properties (atomic, consistent, isolated, and durable).
