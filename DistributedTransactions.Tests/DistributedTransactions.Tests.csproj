@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C07F61C-A1C0-4A2F-8488-38BF8D56D93F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{F23F6B7E-6048-4B75-853A-91D3477ABCCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DistributedTransactions.Console</RootNamespace>
-    <AssemblyName>DistributedTransactions.Console</AssemblyName>
+    <RootNamespace>DistributedTransactions.Tests</RootNamespace>
+    <AssemblyName>DistributedTransactions.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,11 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,29 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\PatientInserter.cs" />
-    <Compile Include="DataAccess\CaseRepository.cs" />
-    <Compile Include="DataAccess\ConditionRepository.cs" />
-    <Compile Include="DataAccess\PatientRepository.cs" />
-    <Compile Include="Common\DatabaseHelper.cs" />
-    <Compile Include="Common\PatientGenerator.cs" />
-    <Compile Include="Common\Transaction.cs" />
-    <Compile Include="Common\TransactionManager.cs" />
-    <Compile Include="TransactionExample.cs" />
-    <Compile Include="Models\Case.cs" />
-    <Compile Include="Models\Condition.cs" />
-    <Compile Include="Models\Patient.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Helpers\FakeTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_inserting_a_patient.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sql\northwest-medical-center.sql" />
-    <Content Include="Sql\twinbrook-medical-center.sql" />
+    <ProjectReference Include="..\DistributedTransactions.Console\DistributedTransactions.Console.csproj">
+      <Project>{6c07f61c-a1c0-4a2f-8488-38bf8d56d93f}</Project>
+      <Name>DistributedTransactions.Console</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

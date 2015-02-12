@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Transactions;
 using DistributedTransactions.Console.BusinessLogic;
+using DistributedTransactions.Console.Common;
 using DistributedTransactions.Console.DataAccess;
-using DistributedTransactions.Console.Helpers;
+using TransactionManager = DistributedTransactions.Console.Common.TransactionManager;
 
 namespace DistributedTransactions.Console
 {
@@ -27,7 +28,8 @@ namespace DistributedTransactions.Console
                     var patientInserter = new PatientInserter(
                         new PatientRepository("twinbrook-medical-center"),
                         new CaseRepository("twinbrook-medical-center"),
-                        new ConditionRepository("twinbrook-medical-center"));
+                        new ConditionRepository("twinbrook-medical-center"),
+                        new TransactionManager());
 
                     var patientId = patientInserter.Insert(patient);
                     System.Console.WriteLine("Inserted a patient with PatientId: {0}", patientId);
@@ -59,7 +61,8 @@ namespace DistributedTransactions.Console
                     var twinbrookPatientInserter = new PatientInserter(
                         new PatientRepository("twinbrook-medical-center"),
                         new CaseRepository("twinbrook-medical-center"),
-                        new ConditionRepository("twinbrook-medical-center"));
+                        new ConditionRepository("twinbrook-medical-center"),
+                        new TransactionManager());
 
                     var twinbrookPatientId = twinbrookPatientInserter.Insert(patient);
                     System.Console.WriteLine("Inserted a patient with PatientId: {0} into Twinbrook Medical Center", twinbrookPatientId);
@@ -67,7 +70,8 @@ namespace DistributedTransactions.Console
                     var northwestPatientInserter = new PatientInserter(
                         new PatientRepository("northwest-medical-center"),
                         new CaseRepository("northwest-medical-center"),
-                        new ConditionRepository("northwest-medical-center"));
+                        new ConditionRepository("northwest-medical-center"),
+                        new TransactionManager());
 
                     var northwestPatientId = northwestPatientInserter.Insert(patient);
                     System.Console.WriteLine("Inserted a patient with PatientId: {0} into Northwest Medical Center", northwestPatientId);
@@ -99,7 +103,8 @@ namespace DistributedTransactions.Console
                     var twinbrookPatientInserter = new PatientInserter(
                         new PatientRepository("twinbrook-medical-center"),
                         new CaseRepository("twinbrook-medical-center"),
-                        new ConditionRepository("twinbrook-medical-center"));
+                        new ConditionRepository("twinbrook-medical-center"),
+                        new TransactionManager());
 
                     var twinbrookPatientId = twinbrookPatientInserter.Insert(patient);
                     System.Console.WriteLine("Inserted a patient with PatientId: {0} into Twinbrook Medical Center", twinbrookPatientId);
@@ -107,7 +112,8 @@ namespace DistributedTransactions.Console
                     var remoteTwinbrookPatientInserter = new PatientInserter(
                         new PatientRepository("remote-twinbrook-medical-center"),
                         new CaseRepository("remote-twinbrook-medical-center"),
-                        new ConditionRepository("remote-twinbrook-medical-center"));
+                        new ConditionRepository("remote-twinbrook-medical-center"),
+                        new TransactionManager());
 
                     var remoteTwinbrookPatientId = remoteTwinbrookPatientInserter.Insert(patient);
                     System.Console.WriteLine("Inserted a patient with PatientId: {0} into Remote Twinbrook Medical Center", remoteTwinbrookPatientId);

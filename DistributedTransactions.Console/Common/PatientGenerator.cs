@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using DistributedTransactions.Console.Models;
 
-namespace DistributedTransactions.Console.Helpers
+namespace DistributedTransactions.Console.Common
 {
     public static class PatientGenerator
     {

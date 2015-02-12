@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace DistributedTransactions.Console.Helpers
+namespace DistributedTransactions.Console.Common
 {
     public static class DatabaseHelper
     {

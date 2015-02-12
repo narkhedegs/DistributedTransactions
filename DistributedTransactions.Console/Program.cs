@@ -1,5 +1,5 @@
 ﻿using System;
-using DistributedTransactions.Console.Helpers;
+using DistributedTransactions.Console.Common;
 
 namespace DistributedTransactions.Console
 {
@@ -19,8 +19,12 @@ namespace DistributedTransactions.Console
                 System.Console.Write(Environment.NewLine + "Your selected ");
                 var selection = Convert.ToInt32(System.Console.ReadLine());
 
-                System.Console.Write(Environment.NewLine + "Cause exception inside transaction? (Y/N) ");
-                var causeException = Convert.ToString(System.Console.ReadLine()).ToLower() == "Y".ToLower();
+                var causeException = false;
+                if (selection != 4)
+                {
+                    System.Console.Write(Environment.NewLine + "Cause exception inside transaction? (Y/N) ");
+                    causeException = Convert.ToString(System.Console.ReadLine()).ToLower() == "Y".ToLower();
+                }
 
                 var transactionExample = new TransactionExample();
                 switch (selection)

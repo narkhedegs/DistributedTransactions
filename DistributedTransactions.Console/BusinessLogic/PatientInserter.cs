@@ -1,30 +1,38 @@
-﻿using System.Transactions;
+﻿using DistributedTransactions.Console.Common;
 using DistributedTransactions.Console.DataAccess;
 using DistributedTransactions.Console.Models;
 
 namespace DistributedTransactions.Console.BusinessLogic
 {
-    public class PatientInserter
+    public interface IPatientInserter
     {
-        private readonly PatientRepository _patientRepository;
-        private readonly CaseRepository _caseRepository;
-        private readonly ConditionRepository _conditionRepository;
+        int Insert(Patient patient);
+    }
+
+    public class PatientInserter : IPatientInserter
+    {
+        private readonly IPatientRepository _patientRepository;
+        private readonly ICaseRepository _caseRepository;
+        private readonly IConditionRepository _conditionRepository;
+        private readonly ITransactionManager _transactionManager;
 
         public PatientInserter(
-            PatientRepository patientRepository, 
-            CaseRepository caseRepository,
-            ConditionRepository conditionRepository)
+            IPatientRepository patientRepository, 
+            ICaseRepository caseRepository,
+            IConditionRepository conditionRepository,
+            ITransactionManager transactionManager)
         {
             _patientRepository = patientRepository;
             _caseRepository = caseRepository;
             _conditionRepository = conditionRepository;
+            _transactionManager = transactionManager;
         }
 
         public int Insert(Patient patient)
         {
             var patientId = 0;
 
-            using (var scope = new TransactionScope())
+            using (var transaction = _transactionManager.CreateTransaction())
             {
                 patientId = _patientRepository.Insert(patient);
                 foreach (var @case in patient.Cases)
@@ -38,7 +46,7 @@ namespace DistributedTransactions.Console.BusinessLogic
                     }
                 }
 
-                scope.Complete();
+                transaction.Complete();
             }
 
             return patientId;

@@ -5,7 +5,12 @@ using DistributedTransactions.Console.Models;
 
 namespace DistributedTransactions.Console.DataAccess
 {
-    public class CaseRepository
+    public interface ICaseRepository
+    {
+        int Insert(Case @case);
+    }
+
+    public class CaseRepository : ICaseRepository
     {
         private readonly string _connectionStringName;
 

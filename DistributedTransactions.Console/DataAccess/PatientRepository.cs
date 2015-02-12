@@ -5,7 +5,12 @@ using DistributedTransactions.Console.Models;
 
 namespace DistributedTransactions.Console.DataAccess
 {
-    public class PatientRepository
+    public interface IPatientRepository
+    {
+        int Insert(Patient patient);
+    }
+
+    public class PatientRepository : IPatientRepository
     {
         private readonly string _connectionStringName;
 

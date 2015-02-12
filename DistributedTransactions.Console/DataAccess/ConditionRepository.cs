@@ -4,7 +4,12 @@ using DistributedTransactions.Console.Models;
 
 namespace DistributedTransactions.Console.DataAccess
 {
-    public class ConditionRepository
+    public interface IConditionRepository
+    {
+        void Insert(Condition condition);
+    }
+
+    public class ConditionRepository : IConditionRepository
     {
         private readonly string _connectionStringName;
 
