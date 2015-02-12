@@ -16,7 +16,7 @@ namespace DistributedTransactions
                 Console.WriteLine("3. Distributed Transaction with two durable resources on different servers");
                 Console.WriteLine("4. Reset Databases");
 
-                Console.Write(Environment.NewLine + "Your selected ");
+                Console.Write(Environment.NewLine + "You selected ");
                 var selection = Convert.ToInt32(Console.ReadLine());
 
                 var causeException = false;
