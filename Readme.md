@@ -41,7 +41,7 @@ You can find MSDTC management tool by going to - Administrative Tools > Componen
 ![msdtc management tool](http://i.imgur.com/38pv3W5.png)
 
 ### How to configure MSDTC ? 
-Right click on Local DTC inside componenet services and select Properties.
+Right click on Local DTC inside component services and select Properties.
 
 ![how to configure msdtc](http://i.imgur.com/KR7LBWr.png)
 
