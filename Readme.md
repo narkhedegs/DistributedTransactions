@@ -30,7 +30,7 @@ MSDTC is an acronym for **Microsoft Distributed Transaction Coordinator**. MSDTC
 MSDTC is a windows service and you can find it by going to - 
 Administrative Tools > Services > Distributed Transaction Coordinator. 
 
-![where is msdtc](http://i.imgur.com/F4vsRNL.png)
+![where is msdtc](http://i.imgur.com/uNY2Zc8.png)
 
 ### How to enable MSDTC ?
 You can turn MSDTC on/off by starting/stopping the Distributed Transaction Coordinator windows service.
@@ -38,17 +38,17 @@ You can turn MSDTC on/off by starting/stopping the Distributed Transaction Coord
 ### Where is MSDTC management tool ? 
 You can find MSDTC management tool by going to - Administrative Tools > Component Services
 
-![msdtc management tool](http://i.imgur.com/xU1JoaI.png)
+![msdtc management tool](http://i.imgur.com/38pv3W5.png)
 
 ### How to configure MSDTC ? 
 Right click on Local DTC inside componenet services and select Properties.
 
-![how to configure msdtc](http://i.imgur.com/EP7PdKd.png)
+![how to configure msdtc](http://i.imgur.com/KR7LBWr.png)
 
 ### MSDTC Network Configuration
 To configure the Security and Network settings for MSDTC, go to Security Tab on the Local DTC properties.
 
-![msdtc network configuration](http://i.imgur.com/Yo1oPQL.png)
+![msdtc network configuration](http://i.imgur.com/4Mci0dn.png)
 
 *Note: Following information is taken from the Component Services Administration help file. You open this file by clicking "Learn more about setting these properties" link at the bottom of Local DTC Properties window shown in the screen shot above.*
 
